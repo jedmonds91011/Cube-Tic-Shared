@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube Tic.CSharp.Plugins", "Cube Tic.CSharp.Plugins.csproj", "{C7EB8F83-7421-FE33-99EB-4081F2D9B68F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube Tic.CSharp", "Cube Tic.CSharp.csproj", "{41647F69-44A4-01D9-6493-566B22C3E1FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube Tic.CSharp.Editor", "Cube Tic.CSharp.Editor.csproj", "{CE4D9C94-95AC-2DB4-E59C-9B9DE37D16D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7EB8F83-7421-FE33-99EB-4081F2D9B68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EB8F83-7421-FE33-99EB-4081F2D9B68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EB8F83-7421-FE33-99EB-4081F2D9B68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EB8F83-7421-FE33-99EB-4081F2D9B68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41647F69-44A4-01D9-6493-566B22C3E1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41647F69-44A4-01D9-6493-566B22C3E1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41647F69-44A4-01D9-6493-566B22C3E1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41647F69-44A4-01D9-6493-566B22C3E1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4D9C94-95AC-2DB4-E59C-9B9DE37D16D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4D9C94-95AC-2DB4-E59C-9B9DE37D16D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4D9C94-95AC-2DB4-E59C-9B9DE37D16D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4D9C94-95AC-2DB4-E59C-9B9DE37D16D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

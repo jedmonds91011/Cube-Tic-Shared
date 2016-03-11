@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\C#-Scripts\GameManager.cs">
+    <Files>
+      <File FileName="Assets\C#-Scripts\networkTest.cs" Line="45" Column="2" />
+      <File FileName="..\Tactics-Quest-Arena\Assets\Scripts\GUI\AccountPanelManager.cs" Line="11" Column="1" />
+      <File FileName="Assets\C#-Scripts\ClickSquare.cs" Line="1" Column="1" />
+      <File FileName="Assets\C#-Scripts\GameManager.cs" Line="657" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
