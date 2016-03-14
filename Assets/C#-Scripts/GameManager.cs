@@ -7,11 +7,14 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PhotonView))]
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
-    public AudioSource source;
-    public AudioSource backgroundMusic;
+
+    [Header("Player Specific Data")]
     public int currentPlayer = 0;
     public string[] playerObjName = new string[] { "X-obj", "O-obj" };
     public string[] playerName = new string[] { "Scott", "Elliot" };
+    public Text[] playerDisplay;
+
+    [Header("Game Logic Info")]
     public bool gameIsOver = false;
     public bool hasBeenSpun = false;
     public bool cubeSpinning = false;
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour {
     public int[] wCombos = new int[100];
     public int[] aSides = new int[7];
 
-    //public GameObject cube;
+    [Header("Screen UI Objects")]
     public Text iBox;
     public Text xBox;
     public Text oBox;
@@ -47,11 +50,11 @@ public class GameManager : MonoBehaviour {
     public Text waitingText;
     public float numDots;
 
-    public GameObject PanelXPlayer;
-    public GameObject PanelOPlayer;
     private Vector3[] endVector = new Vector3[6];
     public List<Vector3> endCube = new List<Vector3>();
     public List<AudioClip> soundClips = new List<AudioClip>();
+    public AudioSource source;
+    public AudioSource backgroundMusic;
 
     public int numCubeSpins;
     public float cubeSpinSpeed;
@@ -59,22 +62,20 @@ public class GameManager : MonoBehaviour {
     public Vector3 endCubeVector;
     public int faceIndex;
 
-
+    [Header("Photon Network Data")]
     public List<int> networkIds;
     public List<networkTest> players;
-
     public bool networkMatch;
     public bool gameReady;
     public PhotonView photonView;
+
+    [Header("AI Info")]
     public bool againstAI;
     public bool aiPlayingSquare = false;
-
     public List<GameObject> possibleWins;
     public List<GameObject> possibleBlocks;
     public List<GameObject> possibleMoves;
     public List<GameObject> cubeFaces;
-
-
 
 
     // Use this for initialization
@@ -120,12 +121,11 @@ public class GameManager : MonoBehaviour {
                 players[1].isAI = true;
             }
 		}
-
-
     }
+
     void Start()
     {
-
+        playerDisplay[currentPlayer].color = Color.red;
         UpdateInfo("Player " + playerName[currentPlayer] + " begins the game, Give it a good Spin!");
 
         endVector[0] = (new Vector3(20, 180, -135));    // Yellow side	#1  Id-0
@@ -135,17 +135,12 @@ public class GameManager : MonoBehaviour {
         endVector[4] = (new Vector3(45, 73, -25));  // White side	#5  Id-4
         endVector[5] = (new Vector3(-45, -107, 113));   // Magenta side	#6  Id-5
 
-        PanelXPlayer.SetActive(true);
-        PanelOPlayer.SetActive(false);
-
         //what does this do??
         for (var j = 100; j < 623; j++) aSquares[j] = 9;
         numCubeSpins = 15;
         cubeSpinSpeed = 50;
     }
 
-  
-    
     public void SpinButton()
     {
         if (!gameIsOver)
@@ -307,19 +302,13 @@ public class GameManager : MonoBehaviour {
         {
             spinButton.interactable = true;
         }
-		currentPlayer++;
-		if(currentPlayer > 1)
-		{
-			currentPlayer = 0;
-			PanelXPlayer.SetActive(true);
-			PanelOPlayer.SetActive(false);
-		}
-		else
-		{
-			PanelXPlayer.SetActive(false);
-			PanelOPlayer.SetActive(true);
-		}
-		if(!networkMatch)
+
+        playerDisplay[currentPlayer].color = Color.white;
+        currentPlayer++;
+        if (currentPlayer > 1) currentPlayer = 0;
+        playerDisplay[currentPlayer].color = Color.red;
+
+        if (!networkMatch)
 		{
 			for(int i = 0; i < players[currentPlayer].myMagicCubes.Count; i++)
 			{
@@ -675,7 +664,6 @@ public class GameManager : MonoBehaviour {
         aiPlayingSquare = false;
     }
 
-
     public void initMultiplayer()
     {
         StartCoroutine(initCoRoutine());
@@ -732,7 +720,7 @@ public class GameManager : MonoBehaviour {
 
     }
 
-	public void restartMatch()
+	public void restartMatch()  // Removed these buttons
 	{
 		if(networkMatch)
 		{
@@ -750,13 +738,9 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-	
-
-	public void backToMain()
-	{
+	public void backToMain()  // Removed these buttons
+    {
 		SceneManager.LoadScene("MenuScreen");
 	}
-
-   
 
 }
