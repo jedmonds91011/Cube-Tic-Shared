@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube-Tic-Shared.CSharp.Plugins", "Cube-Tic-Shared.CSharp.Plugins.csproj", "{A8D422DC-9804-B86E-9706-1882423F410E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube-Tic-Shared.CSharp", "Cube-Tic-Shared.CSharp.csproj", "{C227D108-D05F-F95F-303A-0234DD328A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube-Tic-Shared.CSharp.Editor", "Cube-Tic-Shared.CSharp.Editor.csproj", "{7DB80D6B-82DD-F3AD-4EB3-41DD32F2F6FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8D422DC-9804-B86E-9706-1882423F410E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D422DC-9804-B86E-9706-1882423F410E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D422DC-9804-B86E-9706-1882423F410E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D422DC-9804-B86E-9706-1882423F410E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C227D108-D05F-F95F-303A-0234DD328A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C227D108-D05F-F95F-303A-0234DD328A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C227D108-D05F-F95F-303A-0234DD328A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C227D108-D05F-F95F-303A-0234DD328A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB80D6B-82DD-F3AD-4EB3-41DD32F2F6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB80D6B-82DD-F3AD-4EB3-41DD32F2F6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB80D6B-82DD-F3AD-4EB3-41DD32F2F6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB80D6B-82DD-F3AD-4EB3-41DD32F2F6FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

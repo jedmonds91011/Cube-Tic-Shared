@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        playerDisplay[currentPlayer].color = Color.red;
+        playerDisplay[currentPlayer].color = new Color(1, 0.92f, 0.016f, 1);
         UpdateInfo("Player " + playerName[currentPlayer] + " begins the game, Give it a good Spin!");
 
         endVector[0] = (new Vector3(20, 180, -135));    // Yellow side	#1  Id-0
@@ -306,7 +306,7 @@ public class GameManager : MonoBehaviour {
         playerDisplay[currentPlayer].color = Color.white;
         currentPlayer++;
         if (currentPlayer > 1) currentPlayer = 0;
-        playerDisplay[currentPlayer].color = Color.red;
+        playerDisplay[currentPlayer].color = new Color(1, 0.92f, 0.016f, 1);
 
         if (!networkMatch)
 		{
