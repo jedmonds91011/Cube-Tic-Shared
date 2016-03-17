@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     public int[] aSquares = new int[700];
     public int[] wCombos = new int[100];
     public int[] aSides = new int[7];
+    public Dictionary<int, GameObject> wComboSquares = new Dictionary<int, GameObject>();
 
     [Header("Screen UI Objects")]
     public Text iBox;
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour {
 	public Canvas endGameMenu;
 	public Text resultText;
 	public GameObject confettiParticle;
-	public GameObject cube;
+    public GameObject winningCombo;
+    public GameObject cube;
 
 	public GameObject playerPrefab;
 
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour {
     {
 		cube.SetActive(false);
 		confettiParticle.SetActive(false);
-		gameUI.SetActive(false);
+        gameUI.SetActive(false);
 		endGameMenu.enabled = false;
 		waitingCanvas.enabled = true;
 		waitingText.enabled = true;
@@ -210,7 +212,7 @@ public class GameManager : MonoBehaviour {
 		cubeSpinning = true;
 		source.PlayOneShot (soundClips [0]);
 		StartCoroutine(CubeRotation());
-	}
+    }
 
     IEnumerator CubeRotation ()
 	{
@@ -327,23 +329,81 @@ public class GameManager : MonoBehaviour {
 	void UpdateX(int cbx)
 	{
 		source.PlayOneShot (soundClips [2]);
-		//xCount++;
 		xCount++;
-		//xCount = xCount;
 		wCombos[cbx] = 1;
-		UpdateXCount(xCount);
+        LightUpWinningCombo(cbx);
+        UpdateXCount(xCount);
 	}
 
 	void UpdateO(int cbo)
 	{
 		
 		source.PlayOneShot (soundClips [2]);
-		//oCount++;
 		oCount++;
-		//oCount = oCount;
 		wCombos[cbo] = 2;
-		UpdateOCount(oCount);
+        LightUpWinningCombo(cbo);
+        UpdateOCount(oCount);
 	}
+
+    void LightUpWinningCombo(int cbx)
+    {
+        switch(cbx)
+        {
+            case 11: case 21: case 31: case 41: case 51: case 61:
+                print("wComboSquares 111111111 series");
+                ShowWinningComboStars();
+                break;
+            case 12: case 22: case 32: case 42: case 52: case 62:
+                print("wComboSquares 222222222 series");
+                ShowWinningComboStars();
+                break;
+            case 13: case 23: case 33: case 43: case 53: case 63:
+                print("wComboSquares 333333333 series");
+                ShowWinningComboStars();
+                break;
+            case 14: case 24: case 34: case 44: case 54: case 64:
+                print("wComboSquares 444444444 series");
+                ShowWinningComboStars();
+                break;
+            case 15: case 25: case 35: case 45: case 55: case 65:
+                print("wComboSquares 555555555 series");
+                ShowWinningComboStars();
+                break;
+            case 16: case 26: case 36: case 46: case 56: case 66:
+                print("wComboSquares 666666666 series");
+                ShowWinningComboStars();
+                break;
+            case 17: case 27: case 37: case 47: case 57: case 67:
+                print("wComboSquares 777777777 series");
+                ShowWinningComboStars();
+                break;
+            case 18: case 28: case 38: case 48: case 58: case 68:
+                print("wComboSquares 888888888 series");
+                ShowWinningComboStars();
+                break;
+        }
+    }
+
+    void ShowWinningComboStars()
+    {
+        StartCoroutine(PlayWinningComboStars());
+    }
+
+    IEnumerator PlayWinningComboStars()
+    {
+        winningCombo.SetActive(true);
+        yield return new WaitForSeconds(1);
+        ShowDictionay();
+        winningCombo.SetActive(false);
+    }
+
+    void ShowDictionay()
+    {
+        foreach (KeyValuePair<int, GameObject> entry in wComboSquares)
+        {
+            print(entry.Key + " - " + entry.Value.name + " is at " + entry.Value.transform.position);
+        }
+    }
 	
 	void CheckForWinner()
 	{
@@ -526,7 +586,8 @@ public class GameManager : MonoBehaviour {
 				pieceScript.isUsed = true;
 				int answer = (pieceScript.side * 100) + (pieceScript.x * 10) + (pieceScript.y * 1);
 				aSquares[answer] = currentPlayer;
-				clickCount++;
+                wComboSquares[answer] = square;
+                clickCount++;
 				aSides[pieceScript.side - 1]++;
 				hasBeenSpun = false;
 				usedMagicSquare = false;

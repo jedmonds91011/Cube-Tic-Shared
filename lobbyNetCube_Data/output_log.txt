@@ -22,7 +22,7 @@ Platform assembly: C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Ma
 Loading C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.219 seconds
+- Completed reload, in  0.174 seconds
 Platform assembly: C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Scott\Documents\Cube-Tic-Shared\lobbyNetCube_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -30,13 +30,13 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 4500x1313 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 1.716903 ms
+UnloadTime: 1.678723 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1e6c -> priority: 1 
-  Thread -> id: 1f94 -> priority: 1 
+  Thread -> id: 30a8 -> priority: 1 
+  Thread -> id: 19f0 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 15.321580 ms
+UnloadTime: 14.732036 ms
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2455.
-Total: 2.662802 ms (FindLiveObjects: 0.419167 ms CreateObjectMapping: 0.137122 ms MarkObjects: 1.998127 ms  DeleteObjects: 0.105510 ms)
+Total: 1.889743 ms (FindLiveObjects: 0.298056 ms CreateObjectMapping: 0.084983 ms MarkObjects: 1.422542 ms  DeleteObjects: 0.081698 ms)
 
