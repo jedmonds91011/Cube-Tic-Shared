@@ -2,17 +2,26 @@
 using System.Collections;
 
 public class AutoRotate : MonoBehaviour {
-	Quaternion rotationTo;
-    // Use this for initialization
 
-	void Start () {
+    Quaternion rotationTo;
+
+    public Animator menuButton;
+    public Animator SettingsButton;
+
+    public Animator SettingsPanel;
+    public Animator MenuPanel;
+
+    public bool rotateCube = true;
+
+    void Start () {
+        CloseSettings();
+        CloseMenu();
         rotationTo = Random.rotationUniform;
     }
 	
-	// Update is called once per frame
 	void Update () 
 	{
-		this.transform.RotateAround (transform.position, new Vector3(5f,10f, 1f),1f);
+		if (rotateCube) this.transform.RotateAround (transform.position, new Vector3(5f,10f, 1f),1f);
 
 		//this.transform.rotation = Quaternion.Slerp (this.transform.rotation,rotationTo,1f*Time.deltaTime);
 //		this.transform.rotation = Quaternion.Lerp (this.transform.rotation, rotationTo, Time.deltaTime);
@@ -23,4 +32,36 @@ public class AutoRotate : MonoBehaviour {
 //		}
 
 	}
+
+    public void OpenSettings()
+    {
+        rotateCube = false;
+        menuButton.SetBool("isHidden", true);
+        SettingsButton.SetBool("isHidden", true);
+        SettingsPanel.SetBool("isHidden", false);
+    }
+
+    public void CloseSettings()
+    {
+        menuButton.SetBool("isHidden", false);
+        SettingsButton.SetBool("isHidden", false);
+        SettingsPanel.SetBool("isHidden", true);
+        rotateCube = true;
+    }
+
+    public void OpenMenu()
+    {
+        rotateCube = false;
+        menuButton.SetBool("isHidden", true);
+        SettingsButton.SetBool("isHidden", true);
+        MenuPanel.SetBool("isHidden", false);
+    }
+
+    public void CloseMenu()
+    {
+        menuButton.SetBool("isHidden", false);
+        SettingsButton.SetBool("isHidden", false);
+        MenuPanel.SetBool("isHidden", true);
+        rotateCube = true;
+    }
 }
