@@ -10,6 +10,7 @@ public class AutoRotate : MonoBehaviour {
 
     public Animator SettingsPanel;
     public Animator MenuPanel;
+    public Animator HelpPanel;
 
     public bool rotateCube = true;
 
@@ -62,6 +63,22 @@ public class AutoRotate : MonoBehaviour {
         menuButton.SetBool("isHidden", false);
         SettingsButton.SetBool("isHidden", false);
         MenuPanel.SetBool("isHidden", true);
+        rotateCube = true;
+    }
+
+    public void OpenHelp()
+    {
+        rotateCube = false;
+        menuButton.SetBool("isHidden", true);
+        SettingsButton.SetBool("isHidden", true);
+        HelpPanel.SetBool("isHidden", false);
+    }
+
+    public void CloseHelp()
+    {
+        menuButton.SetBool("isHidden", false);
+        SettingsButton.SetBool("isHidden", false);
+        HelpPanel.SetBool("isHidden", true);
         rotateCube = true;
     }
 }
