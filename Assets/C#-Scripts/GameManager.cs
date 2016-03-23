@@ -554,18 +554,21 @@ public class GameManager : MonoBehaviour {
 			//gameIsOver = true;
 			if (xCount == oCount) 
 			{
-				UpdateInfo("Game Over!, It's a TIENOOOOOOOO");
-				resultText.text = "Game Over!\n It's a TIE\n NOOOOOOOO";
+				UpdateInfo("Game Over!, It's a TIE NOOOOOOO");
+                ShowWinningComboStars();
+                resultText.text = "Game Over!\n It's a TIE\n NOOOOOOOO";
 			}
 			else if (xCount > oCount)
 			{
 				UpdateInfo("Game Over!, X Wins!, Hooray!");
-				resultText.text = "Game Over!\n X Wins!\n Hooray!";
+                ShowWinningComboStars();
+                resultText.text = "Game Over!\n X Wins!\n Hooray!";
 			}
 			else 
 			{
-				UpdateInfo("Game Over!, O Wins!, BOOOOO!");	
-				resultText.text = "Game Over!\n O Wins!\n BOOOOO!";
+				UpdateInfo("Game Over!, O Wins!, BOOOOO!");
+                ShowWinningComboStars();
+                resultText.text = "Game Over!\n O Wins!\n BOOOOO!";
 			}
 		}
 		else

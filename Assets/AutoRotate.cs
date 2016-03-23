@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AutoRotate : MonoBehaviour {
 
@@ -10,13 +11,24 @@ public class AutoRotate : MonoBehaviour {
 
     public Animator SettingsPanel;
     public Animator MenuPanel;
+    public Animator FactsPanel;
     public Animator HelpPanel;
+    public Animator UserPanel;
+
+    public UserProfile mainUser;
+
+    public Text FirstName;
+    public Text LastName;
+    public Text EmailAddr;
 
     public bool rotateCube = true;
 
     void Start () {
         CloseSettings();
         CloseMenu();
+        CloseFacts();
+        CloseHelp();
+        CloseUser();
         rotationTo = Random.rotationUniform;
     }
 	
@@ -66,19 +78,38 @@ public class AutoRotate : MonoBehaviour {
         rotateCube = true;
     }
 
+    public void OpenFacts()
+    {
+        FactsPanel.SetBool("isHidden", false);
+    }
+
+    public void CloseFacts()
+    {
+        FactsPanel.SetBool("isHidden", true);
+    }
+
     public void OpenHelp()
     {
-        rotateCube = false;
-        menuButton.SetBool("isHidden", true);
-        SettingsButton.SetBool("isHidden", true);
         HelpPanel.SetBool("isHidden", false);
     }
 
     public void CloseHelp()
     {
-        menuButton.SetBool("isHidden", false);
-        SettingsButton.SetBool("isHidden", false);
         HelpPanel.SetBool("isHidden", true);
-        rotateCube = true;
     }
+
+    public void OpenUser()
+    {
+        UserPanel.SetBool("isHidden", false);
+        FirstName.text = mainUser.firstName;
+        LastName.text = mainUser.lastName;
+        EmailAddr.text = mainUser.emailAddress;
+
+    }
+
+    public void CloseUser()
+    {
+        UserPanel.SetBool("isHidden", true);
+    }
+
 }
