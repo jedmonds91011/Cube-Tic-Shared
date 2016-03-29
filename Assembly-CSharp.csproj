@@ -52,6 +52,7 @@
      <Compile Include="Assets\C#-Scripts\TouchManager.cs" />
      <Compile Include="Assets\C#-Scripts\networkTest.cs" />
      <Compile Include="Assets\CubeFace.cs" />
+     <Compile Include="Assets\DataFile\UserProfile.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Extensions.cs" />
@@ -115,11 +116,17 @@
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\Sounds\License.txt" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity_5.2.4/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity_5.2.4/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity_5.2.4/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity_5.2.4/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/jedmo/Documents/GitHub/Cube-Tic-Shared/Assets/Plugins/Photon3Unity3D.dll</HintPath>
@@ -133,10 +140,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity_5.2.4/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7D28F7CE-3DAB-972D-7C76-90A79AD30249}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
