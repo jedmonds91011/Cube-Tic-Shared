@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public string[] playerObjName = new string[] { "X-obj", "O-obj" };
     public string[] playerName = new string[] { "Scott", "Elliot" };
     public Text[] playerDisplay;
+    public UserProfile mainUser;
 
     [Header("Game Logic Info")]
     public bool gameIsOver = false;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour {
     public int[] wCombos = new int[100];
     public int[] aSides = new int[7];
     public Dictionary<int, GameObject> wComboSquares = new Dictionary<int, GameObject>();
+    [SerializeField]
+    private int currentMode;
 
     [Header("Screen UI Objects")]
     public Text iBox;
@@ -127,6 +130,9 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
+        mainUser.gamesPlayed++;
+        mainUser.magicSquares = mainUser.magicSquares - 6;
+        currentMode = PlayerPrefs.GetInt("mode");
         playerDisplay[currentPlayer].color = new Color(1, 0.92f, 0.016f, 1);
         UpdateInfo("Player " + playerName[currentPlayer] + " begins the game, Give it a good Spin!");
 
@@ -393,7 +399,7 @@ public class GameManager : MonoBehaviour {
     {
         winningCombo.SetActive(true);
         yield return new WaitForSeconds(1);
-        ShowDictionay();
+        //ShowDictionay();
         winningCombo.SetActive(false);
     }
 
@@ -555,19 +561,19 @@ public class GameManager : MonoBehaviour {
 			if (xCount == oCount) 
 			{
 				UpdateInfo("Game Over!, It's a TIE NOOOOOOO");
-                ShowWinningComboStars();
+                StartCoroutine(PlayWinningComboStars());
                 resultText.text = "Game Over!\n It's a TIE\n NOOOOOOOO";
 			}
 			else if (xCount > oCount)
 			{
 				UpdateInfo("Game Over!, X Wins!, Hooray!");
-                ShowWinningComboStars();
+                StartCoroutine(PlayWinningComboStars());
                 resultText.text = "Game Over!\n X Wins!\n Hooray!";
 			}
 			else 
 			{
 				UpdateInfo("Game Over!, O Wins!, BOOOOO!");
-                ShowWinningComboStars();
+                StartCoroutine(PlayWinningComboStars());
                 resultText.text = "Game Over!\n O Wins!\n BOOOOO!";
 			}
 		}

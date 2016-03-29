@@ -82,7 +82,6 @@
     <Compile Include="Assets\C#-Scripts\TouchManager.cs" />
     <Compile Include="Assets\C#-Scripts\networkTest.cs" />
     <Compile Include="Assets\CubeFace.cs" />
-    <Compile Include="Assets\DataFile\MakeUserProfile.cs" />
     <Compile Include="Assets\DataFile\UserProfile.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />

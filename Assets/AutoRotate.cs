@@ -20,7 +20,9 @@ public class AutoRotate : MonoBehaviour {
     public Text FirstName;
     public Text LastName;
     public Text EmailAddr;
-
+    public Text GamesPlayed;
+    public Text GamesWon;
+    public Text MagicSquares;
     public bool rotateCube = true;
 
     void Start () {
@@ -104,7 +106,9 @@ public class AutoRotate : MonoBehaviour {
         FirstName.text = mainUser.firstName;
         LastName.text = mainUser.lastName;
         EmailAddr.text = mainUser.emailAddress;
-
+        GamesPlayed.text = mainUser.gamesPlayed.ToString();
+        GamesWon.text = mainUser.gamesWon.ToString();
+        MagicSquares.text = mainUser.magicSquares.ToString();
     }
 
     public void CloseUser()
