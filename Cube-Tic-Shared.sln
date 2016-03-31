@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube-Tic-Shared.CSharp.Plugins", "Cube-Tic-Shared.CSharp.Plugins.csproj", "{A8D422DC-9804-B86E-9706-1882423F410E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube-Tic-Shared.CSharp", "Cube-Tic-Shared.CSharp.csproj", "{C227D108-D05F-F95F-303A-0234DD328A75}"
